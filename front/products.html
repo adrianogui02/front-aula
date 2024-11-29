@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">Sistema de Produtos</div>
+      <div class="navbar-links">
+        <span id="userEmail"></span>
+        <button id="authButton" onclick="toggleAuth()">Logout</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Gerenciamento de Produtos</h1>
+
+      <form id="productForm">
+        <input type="hidden" id="editProductId" />
+        <input type="text" id="name" placeholder="Nome do Produto" required />
+        <input
+          type="text"
+          id="description"
+          placeholder="Descrição do Produto"
+          required
+        />
+        <input
+          type="number"
+          id="price"
+          placeholder="Preço"
+          step="0.01"
+          required
+        />
+        <input type="number" id="stock" placeholder="Estoque" required />
+        <button type="submit">Adicionar Produto</button>
+      </form>
+      <div class="table">
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descricao</th>
+              <th>Preço</th>
+              <th>Estoque</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="productList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/products.js"></script>
+  </body>
+</html>
